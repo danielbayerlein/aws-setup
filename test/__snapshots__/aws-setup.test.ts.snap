@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AwsSetupStack matches snapshot 1`] = `
+Object {
+  "Resources": Object {
+    "BillingAlarm50Dollars0F34B408": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlert50DollarsTopicEDF128F0",
+          },
+        ],
+        "AlarmDescription": "Account Billing Alert for $50",
+        "AlarmName": "Billing Alert - Estimated Bill Exceeds $50",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 50,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlert50DollarsTopicEDF128F0": Object {
+      "Properties": Object {
+        "TopicName": "Billing-Alert-50Dollars",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlert50DollarsTopictestexamplecom0100BC4A": Object {
+      "Properties": Object {
+        "Endpoint": "test@example.com",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlert50DollarsTopicEDF128F0",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
