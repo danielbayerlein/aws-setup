@@ -30,7 +30,7 @@
     "@aws-cdk/assert": "1.105.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^16.11.10",
-    "aws-cdk": "1.105.0",
+    "aws-cdk": "1.134.0",
     "detect-secrets": "^1.0.6",
     "husky": "^6.0.0",
     "jest": "^26.6.3",
